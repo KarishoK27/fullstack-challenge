@@ -1,0 +1,233 @@
+.UserPage__container {
+  height: 100vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-color: rgb(190, 190, 190);
+}
+
+.UserPage__signin {
+  background: rgba(245, 245, 245, 0.85);
+  position: absolute;
+  margin-top: 40px;
+  width: 350px;
+  height: 460px;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  padding: 60px 30px;
+  font-family: sans-serif;
+
+  .UserPage__signin-welcome {
+    span {
+      color: orange;
+      text-transform: uppercase;
+    }
+  }
+
+  .UserPage__signin-signin {
+    margin: 12px 0;
+  }
+
+  .UserPage__signin-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    width: 100%;
+    background-color: rgb(177, 223, 242);
+    margin-top: 10px;
+  }
+
+  @mixin siginUpInput($mg) {
+    margin-top: $mg;
+
+    input {
+      width: 86%;
+      padding: 10px 20px;
+      background: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      border: 0.5px solid gray;
+    }
+
+    input:focus {
+      outline: 0.5px solid blueviolet;
+    }
+
+    p {
+      font-size: 12px;
+      margin-bottom: 10px;
+      margin-top: 20px;
+    }
+  }
+
+  .UserPage__signin-up {
+    @include siginUpInput(20px);
+  }
+
+  .UserPage__signup-up {
+    @include siginUpInput(0);
+
+    .UserPage__signup_username_name {
+      display: flex;
+
+      input {
+        width: 72% !important;
+      }
+    }
+  }
+
+  .UserPage__forgot-password {
+    .UserPage_wrong-userinfo {
+      display: flex;
+      justify-content: space-between;
+      text-align: center;
+      align-items: center;
+
+      span {
+        color: red;
+        font-size: 13px;
+        margin-top: 17px;
+      }
+
+      p {
+        font-size: 11px;
+        margin-top: 20px;
+        color: blue;
+      }
+    }
+
+    .UserPage__forgot-password-p {
+      display: flex;
+      justify-content: flex-end;
+
+      p {
+        font-size: 11px;
+        margin-top: 20px;
+        color: blue;
+      }
+    }
+  }
+
+  .UserPage__login-button {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 40px;
+    button {
+      padding: 10px 60px;
+      background: green;
+      color: white;
+      border: none;
+      font-size: 12px;
+      border-radius: 7px;
+      cursor: pointer;
+    }
+  }
+
+  @mixin linkS($mg) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: $mg;
+    color: gray;
+
+    p {
+      font-weight: bold;
+      font-size: 12px;
+    }
+
+    a {
+      margin-top: 5px;
+      font-size: 13px;
+    }
+  }
+
+  .UserPage__link-signup {
+    @include linkS(40px);
+  }
+
+  .UserPage__link-signin {
+    @include linkS(55px);
+  }
+}
+
+@media (max-width: 1025px) {
+  .UserPage__container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .UserPage__signin {
+    position: static;
+    margin-top: 0px;
+    padding: 40px 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .UserPage__container {
+    background-size: contain;
+  }
+}
+
+@media (max-width: 450px) {
+  .UserPage__container {
+    align-items: center;
+    justify-content: center;
+  }
+  .UserPage__signin {
+    width: 300px;
+    height: 440px;
+
+    .UserPage__login-button {
+      margin-top: 30px;
+    }
+    .UserPage__link-signup {
+      margin-top: 30px;
+    }
+
+    .UserPage__signup-up {
+      input {
+        width: 85%;
+      }
+
+      .UserPage__signup_username_name {
+        display: flex;
+
+        input {
+          width: 68% !important;
+        }
+      }
+    }
+    .UserPage__link-signin {
+      margin-top: 45px;
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .UserPage__signin {
+    width: 270px;
+    height: 440px;
+
+    .UserPage__signup-up {
+      input {
+        width: 83%;
+      }
+
+      .UserPage__signup_username_name {
+        display: flex;
+
+        input {
+          width: 65% !important;
+        }
+      }
+    }
+    .UserPage__link-signin {
+      margin-top: 45px;
+    }
+  }
+}
